@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dronakulam - Premier Coaching Center</title>
+    <style>
+        /* Color Scheme */
+        :root {
+            --primary: #3a86ff;
+            --secondary: #8338ec;
+            --accent: #ff006e;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #06d6a0;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: var(--light);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://placehold.co/1920x1080') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 0.8rem 1.8rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            position: relative;
+            padding-bottom: 1rem;
+            display: inline-block;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        /* Courses Section */
+        .courses {
+            padding: 5rem 0;
+            background-color: var(--light);
+        }
+
+        .courses-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .course-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .course-img {
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .course-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .course-card:hover .course-img img {
+            transform: scale(1.1);
+        }
+
+        .course-content {
+            padding: 1.5rem;
+        }
+
+        .course-content h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 5rem 0;
+            background-color: white;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background-color: var(--light);
+            padding: 2rem;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            font-size: 5rem;
+            color: rgba(0, 0, 0, 0.05);
+            position: absolute;
+            top: 10px;
+            left: 20px;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1rem;
+        }
+
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            text-align: center;
+        }
+
+        .cta h2 {
+            margin-bottom: 1.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h3 {
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav {
+                margin-top: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">Drona<span>kulam</span></div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="mobile-menu">☰</div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Unlock Your Potential With Dronakulam</h1>
+            <p>Personalized coaching to help you achieve academic excellence and competitive success</p>
+            <a href="#courses" class="btn">Explore Courses</a>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Us</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📚</div>
+                    <h3>Expert Faculty</h3>
+                    <p>Learn from the best educators with years of experience in competitive exam preparation.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📝</div>
+                    <h3>Proven Results</h3>
+                    <p>Consistent track record of producing toppers in various competitive examinations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔄</div>
+                    <h3>Personalized Attention</h3>
+                    <p>Small batch sizes to ensure individual focus and customized learning paths.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Comprehensive Materials</h3>
+                    <p>Well-researched study materials and regular assessments to track progress.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Comprehensive Materials</h3>
+                    <p>Well-researched study materials and regular assessments to track progress.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Comprehensive Materials</h3>
+                    <p>Well-researched study materials and regular assessments to track progress.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="courses" id="courses">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Courses</h2>
+            </div>
+            <div class="courses-grid">
+                <div class="course-card">
+                    <div class="course-img">
+                      <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/eaeea97c-af89-4adb-8540-bbed645f40ed.png"
+                        alt="Young students engaged in hands-on learning activities with teacher"
+                        class="w-full h-48 object-cover">
+                    </div>
+                    <div class="course-content">
+                        <h3>IIT-JEE Foundation</h3>
+                        <div class="course-meta">
+                            <span>Class IX-XII</span>
+                            <span>2 Years Program</span>
+                        </div>
+                        <p>Comprehensive preparation with focus on concepts, problem solving, and test-taking strategies.</p>
+                        <a href="#" class="btn">Enroll Now</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="https://placehold.co/600x400" alt="Medical students in lab coats studying human anatomy models in preparation for NEET">
+                    </div>
+                    <div class="course-content">
+                        <h3>NEET Preparation</h3>
+                        <div class="course-meta">
+                            <span>Class XI-XII</span>
+                            <span>18 Months Program</span>
+                        </div>
+                        <p>Specialized coaching for medical entrance with emphasis on biology, chemistry and physics.</p>
+                        <a href="#" class="btn">Enroll Now</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="https://placehold.co/600x400" alt="Board exam preparation classroom with student working on mathematics problems with teacher guidance">
+                    </div>
+                    <div class="course-content">
+                        <h3>CBSE/State Board</h3>
+                        <div class="course-meta">
+                            <span>Class VI-XII</span>
+                            <span>Annual Program</span>
+                        </div>
+                        <p>Complete school curriculum coverage with practical learning and exam-oriented approach.</p>
+                        <a href="#" class="btn">Enroll Now</a>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div class="course-img">
+                        <img src="https://placehold.co/600x400" alt="Olympiad classroom with students solving complex mathematics problems with guidance from expert instructor">
+                    </div>
+                    <div class="course-content">
+                        <h3>Olympiad Excellence</h3>
+                        <div class="course-meta">
+                            <span>Class V-XII</span>
+                            <span>6 Months Program</span>
+                        </div>
+                        <p>Special training for national and international Olympiads in science and mathematics.</p>
+                        <a href="#" class="btn">Enroll Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>Student Success Stories</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        Dronakulam's IIT program transformed my approach to problem solving. The faculty's expertise helped me crack JEE Advanced with All India Rank 247.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://placehold.co/100x100" alt="Rahul Sharma, IIT Delhi student and JEE Advanced qualifier smiling in graduation cap">
+                        </div>
+                        <div>
+                            <h4>Rahul Sharma</h4>
+                            <p>IIT Delhi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        The NEET coaching here was exceptional. Regular tests and personalized feedback helped me improve my rank from 12000 to 850 in the final attempt.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://placehold.co/100x100" alt="Priya Patel, Medical student holding stethoscope with confident expression">
+                        </div>
+                        <div>
+                            <h4>Priya Patel</h4>
+                            <p>AIIMS Delhi</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">
+                        Coming from a small town, I never thought I could compete in Olympiads. Dronakulam's specialized training got me a gold medal in National Science Olympiad.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="author-img">
+                            <img src="https://placehold.co/100x100" alt="Arjun Mehta standing on stage receiving science olympiad medal with proud expression">
+                        </div>
+                        <div>
+                            <h4>Arjun Mehta</h4>
+                            <p>Olympiad Gold Medalist</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="container">
+            <h2>Ready to Start Your Success Journey?</h2>
+            <p>Limited seats available. Enroll today to secure your spot.</p>
+            <a href="#" class="btn">Contact Us</a>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>Dronakulam</h3>
+                    <p>Empowering students with knowledge and skills to achieve their academic dreams since 2010.</p>
+                    <div class="social-links">
+                        <a href="#"><span>FB</span></a>
+                        <a href="#"><span>TW</span></a>
+                        <a href="#"><span>IG</span></a>
+                        <a href="#"><span>YT</span></a>
+                        <a href="#"><span>LI</span></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#courses">Courses</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Courses</h3>
+                    <ul>
+                        <li><a href="#">IIT-JEE</a></li>
+                        <li><a href="#">NEET</a></li>
+                        <li><a href="#">Board Exams</a></li>
+                        <li><a href="#">Olympiads</a></li>
+                        <li><a href="#">Crash Courses</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li>123 Education Street</li>
+                        <li>Mumbai, India 400001</li>
+                        <li>Phone: +91 9876543210</li>
+                        <li>Email: info@dronakulam.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Dronakulam Coaching Center. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple mobile menu toggle functionality
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('show');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
