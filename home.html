@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dreonakulam Coaching Center</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/b67d4619-4571-4dac-b1fe-61ea9e11b542.png') no-repeat center center;
+            background-size: cover;
+            height: 70vh;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .practice-accordion {
+            transition: all 0.3s ease;
+        }
+
+        input:checked+.practice-accordion-content {
+            max-height: 1000px;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-blue-800 text-white shadow-lg">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/da6a6efb-12a3-4102-a9ec-ef6785b550af.png"
+                    alt="Dreonakulam Coaching Center logo with book and graduation cap icon" class="h-12">
+                <h1 class="text-2xl font-bold">Dreonakulam Coaching Center</h1>
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="hover:text-blue-200">Home</a>
+                <a href="#courses" class="hover:text-blue-200">Courses</a>
+                <a href="#practice" class="hover:text-blue-200">Practice</a>
+                <a href="question_Papers.html" class="hover:text-blue-200">Question Papers</a>
+                <a href="#register" class="bg-white text-blue-800 px-4 py-2 rounded hover:bg-blue-100">Register Now</a>
+            </div>
+            <button class="md:hidden focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section flex items-center justify-center">
+        <div class="text-center px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">Empowering Students Since 2010</h2>
+            <p class="text-xl text-white mb-8 max-w-2xl mx-auto">Quality education for grades 1-12 through comprehensive
+                offline and online coaching programs</p>
+            <div class="space-x-4">
+                <a href="#register"
+                    class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium inline-block">Enroll
+                    Now</a>
+                <a href="#courses"
+                    class="bg-white hover:bg-gray-100 text-blue-800 px-6 py-3 rounded-lg font-medium inline-block">Our
+                    Courses</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Why Choose Dreonakulam</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-blue-50 p-8 rounded-lg text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/81e58172-5eda-4495-ae21-9ec88c31ca66.png"
+                        alt="Experienced teacher explaining concept to students in classroom" class="mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Expert Faculty</h3>
+                    <p>Our team consists of highly qualified teachers with 10+ years of teaching experience.</p>
+                </div>
+                <div class="bg-blue-50 p-8 rounded-lg text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/acec67a9-4b3c-494c-955f-18e0e961607a.png"
+                        alt="Students studying with digital tablet and physical books in modern classroom"
+                        class="mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Hybrid Learning</h3>
+                    <p>Flexible offline and online classes to suit your learning needs and schedule.</p>
+                </div>
+                <div class="bg-blue-50 p-8 rounded-lg text-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/84ee4c15-fe55-4943-aac6-bbb8ff4c4b62.png"
+                        alt="Student raising hand with perfect test scores displayed on tablet screen"
+                        class="mx-auto mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Proven Results</h3>
+                    <p>90% of our students improve by at least 2 grade levels within 6 months.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Our Courses</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Comprehensive academic programs for grades 1
+                through 12</p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Elementary School Courses -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden course-card transition-all duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/eaeea97c-af89-4adb-8540-bbed645f40ed.png"
+                        alt="Young students engaged in hands-on learning activities with teacher"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Elementary School (1-5)</h3>
+                        <p class="text-gray-600 mb-4">Foundation building courses for young learners with interactive
+                            teaching methods.</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>English, Math, Science</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Creative Learning Activities</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold">₹2,500/month</span>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Enroll
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Middle School Courses -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden course-card transition-all duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/01999673-3927-4e83-899d-10dcb1faf410.png"
+                        alt="Middle school students working in small study groups in modern classroom"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Middle School (6-8)</h3>
+                        <p class="text-gray-600 mb-4">Comprehensive curriculum covering all major subjects with concept
+                            clarity focus.</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Math, Science, Social Studies</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Regular Assessments</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold">₹3,500/month</span>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Enroll
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- High School Courses -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden course-card transition-all duration-300">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/559305ed-61cd-493c-a86e-b2155993ffff.png"
+                        alt="High school students preparing for exams with focused study materials"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">High School (9-12)</h3>
+                        <p class="text-gray-600 mb-4">Advanced courses with competitive exam preparation and specialized
+                            subjects.</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Physics, Chemistry, Biology, Math</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <span>Board Exam Preparation</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center">
+                            <span class="text-xl font-bold">₹4,500/month</span>
+                            <button class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded">Enroll
+                                Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <button class="text-blue-700 hover:text-blue-900 font-medium flex items-center mx-auto">
+                    View All Courses
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice Questions Section -->
+    <section id="practice" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Practice Questions</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Sharpen your skills with our carefully curated
+                practice materials</p>
+
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- Practice Accordions -->
+                <div>
+                    <input type="checkbox" id="class1-5" class="hidden">
+                    <label for="class1-5"
+                        class="practice-accordion flex items-center justify-between p-4 bg-blue-100 rounded-lg cursor-pointer">
+                        <h3 class="text-lg font-semibold">Class 1-5 Practice Questions</h3>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </label>
+                    <div class="practice-accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-4 bg-gray-50 rounded-b-lg space-y-4">
+                            <div class="flex justify-between items-center p-3 bg-white rounded border">
+                                <span>Mathematics Basic Concepts</span>
+                                <button
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 text-sm rounded">Download</button>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-white rounded border">
+                                <span>English Grammar Exercises</span>
+                                <button
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 text-sm rounded">Download</button>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-white rounded border">
+                                <span>EVS Worksheets</span>
+                                <button
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 text-sm rounded">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="class6-8" class="hidden">
+                    <label for="class6-8"
+                        class="practice-accordion flex items-center justify-between p-4 bg-blue-100 rounded-lg cursor-pointer">
+                        <h3 class="text-lg font-semibold">Class 6-8 Practice Questions</h3>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </label>
+                    <div class="practice-accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-4 bg-gray-50 rounded-b-lg space-y-4">
+                            <div class="flex justify-between items-center p-3 bg-white rounded border">
+                                <span>Mathematics Problem Sets</span>
+                                <button
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 text-sm rounded">Download</button>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-white rounded border">
+                                <span>Science Practical Worksheets</span>
+                                <button
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 text-sm rounded">Download</button>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-white rounded border">
+                                <span>Social Studies Exercise Book</span>
+                                <button
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 text-sm rounded">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <input type="checkbox" id="class9-12" class="hidden">
+                    <label for="class9-12"
+                        class="practice-accordion flex items-center justify-between p-4 bg-blue-100 rounded-lg cursor-pointer">
+                        <h3 class="text-lg font-semibold">Class 9-12 Practice Questions</h3>
+                        <svg class="w-5 h-5 transform transition-transform" fill="none" stroke="currentColor"
+                            viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7">
+                            </path>
+                        </svg>
+                    </label>
+                    <div class="practice-accordion-content max-h-0 overflow-hidden transition-all duration-300">
+                        <div class="p-4 bg-gray-50 rounded-b-lg space-y-4">
+                            <div class="flex justify-between items-center p-3 bg-white rounded border">
+                                <span>Advanced Mathematics Problems</span>
+                                <button
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 text-sm rounded">Download</button>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-white rounded border">
+                                <span>Physics Numerical Bank</span>
+                                <button
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 text-sm rounded">Download</button>
+                            </div>
+                            <div class="flex justify-between items-center p-3 bg-white rounded border">
+                                <span>Chemistry Practice Papers</span>
+                                <button
+                                    class="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 text-sm rounded">Download</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Question Papers Section -->
+    <section id="papers" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-4">Previous Year Question Papers</h2>
+            <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">Get access to comprehensive question papers
+                from previous years</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/10929ea3-31c9-4a9e-a2b4-06da75e34d1e.png"
+                        alt="Stack of previous year question papers with highlighters and pens"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Class 10 Board Papers</h3>
+                        <p class="text-gray-600 mb-4">Last 5 years board exam question papers with solutions</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">Mathematics (2018-2023)</span>
+                                <span class="font-bold">₹250</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">Science (2018-2023)</span>
+                                <span class="font-bold">₹250</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded">View All
+                            Papers</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f91cc25c-ad47-4dfe-abe6-7c73df558e40.png"
+                        alt="Student analyzing question papers with mentor in coaching center library"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Class 12 Board Papers</h3>
+                        <p class="text-gray-600 mb-4">Comprehensive collection of previous year papers</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">Physics (2018-2023)</span>
+                                <span class="font-bold">₹300</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">Chemistry (2018-2023)</span>
+                                <span class="font-bold">₹300</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded">View All
+                            Papers</button>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cda3aee4-49c7-48e5-a169-979f01b4a77b.png"
+                        alt="Digital tablet displaying question paper solutions with annotations"
+                        class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2">Competitive Exam Papers</h3>
+                        <p class="text-gray-600 mb-4">Practice papers for various competitive exams</p>
+                        <div class="space-y-2 mb-4">
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">NTSE Previous Papers</span>
+                                <span class="font-bold">₹350</span>
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-sm">Olympiad Papers</span>
+                                <span class="font-bold">₹350</span>
+                            </div>
+                        </div>
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded">View All
+                            Papers</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form -->
+    <section id="register" class="py-16 bg-blue-800 text-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-xl overflow-hidden">
+                <div class="md:flex">
+                    <div class="md:w-1/2 bg-blue-700 p-8 flex items-center justify-center">
+                        <div>
+                            <h2 class="text-2xl font-bold mb-4">Ready to Get Started?</h2>
+                            <p class="mb-6">Join Dreonakulam Coaching Center today and take the first step towards
+                                academic excellence.</p>
+                            <div class="space-y-4">
+                                <div class="flex items-start">
+                                    <svg class="w-6 h-6 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <p>Personalized attention with small batch sizes</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <svg class="w-6 h-6 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <p>Expert faculty with proven teaching methodologies</p>
+                                </div>
+                                <div class="flex items-start">
+                                    <svg class="w-6 h-6 mr-3 mt-1 flex-shrink-0" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <p>Regular progress reports and parent-teacher meetings</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="md:w-1/2 p-8">
+                        <h2 class="text-2xl font-bold text-gray-800 mb-6">Register Now</h2>
+                        <form id="registrationForm">
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="name">Full Name</label>
+                                <input type="text" id="name"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="email">Email</label>
+                                <input type="email" id="email"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="phone">Phone Number</label>
+                                <input type="tel" id="phone"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="grade">Grade/Class</label>
+                                <select id="grade"
+                                    class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    required>
+                                    <option value="" disabled selected>Select your grade</option>
+                                    <option value="1-5">Classes 1-5</option>
+                                    <option value="6-8">Classes 6-8</option>
+                                    <option value="9-10">Classes 9-10</option>
+                                    <option value="11-12">Classes 11-12</option>
+                                </select>
+                            </div>
+                            <div class="mb-4">
+                                <label class="block text-gray-700 mb-2" for="mode">Preferred Mode</label>
+                                <div class="flex space-x-4">
+                                    <label class="flex items-center">
+                                        <input type="radio" name="mode" value="offline" class="mr-2" checked>
+                                        <span>Offline Classes</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="radio" name="mode" value="online" class="mr-2">
+                                        <span>Online Classes</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <button type="submit"
+                                class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-medium mt-4">Submit
+                                Registration</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">What Our Students Say</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/92487314-ee17-4658-8d18-2818f447fe62.png"
+                            alt="Happy young student portrait with positive expression"
+                            class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Rahul Sharma</h4>
+                            <p class="text-sm text-gray-600">Class 10 Student</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The math classes helped me improve from 65% to 92% in just one term. The
+                        teachers are really patient and explain everything clearly."</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e1a5e2ef-4350-4ef7-ac84-5bc4caa707e6.png"
+                            alt="Confident high school student giving testimonial" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Priya Patel</h4>
+                            <p class="text-sm text-gray-600">Class 12 Student</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"The physics question bank was extremely helpful for my board exam
+                        preparation. I could practice all types of problems before the exam."</p>
+                </div>
+                <div class="bg-gray-50 p-6 rounded-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/aaa4e429-1926-4fb8-aeb9-336f438fd8d1.png"
+                            alt="Satisfied parent providing positive feedback" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold">Mrs. Gupta</h4>
+                            <p class="text-sm text-gray-600">Parent</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"My daughter's performance improved significantly after joining
+                        Dreonakulam. The teachers provide regular updates and conduct PTMs to discuss progress."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f2d3e3b4-941b-4ef3-96a7-ddca86d62c0d.png"
+                        alt="Dreonakulam Coaching Center logo" class="h-12 mb-4">
+                    <p class="text-sm text-gray-400">Empowering young minds through quality education since 2010. Join
+                        us and start your journey towards academic success.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li><a href="#home" class="hover:text-white">Home</a></li>
+                        <li><a href="#courses" class="hover:text-white">Courses</a></li>
+                        <li><a href="#practice" class="hover:text-white">Practice</a></li>
+                        <li><a href="#papers" class="hover:text-white">Question Papers</a></li>
+                        <li><a href="#register" class="hover:text-white">Register</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-sm text-gray-400">
+                        <li>📍 Dreonakulam, Tamil Nadu, India</li>
+                        <li>📞 +91 98765 43210</li>
+                        <li>✉️ support@dreonakulam.in</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-white">Facebook</a>
+                        <a href="#" class="hover:text-white">Instagram</a>
+                        <a href="#" class="hover:text-white">YouTube</a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 text-center text-sm text-gray-500">&copy; 2025 Dreonakulam Coaching Center. All rights
+                reserved.</div>
+        </div>
+    </footer>
+</body>
+
+</html>
